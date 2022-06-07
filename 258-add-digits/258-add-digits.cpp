@@ -1,20 +1,19 @@
 class Solution 
 {
 public:
-    int m,sum=0;
+    int sum=0;
     int addDigits(int num) 
     { 
-        if(num==0)
+        if(num == 0)
             return 0;
-        int s=0;
-        while(num>0)
-        {
-            m= num%10; //1
-            s+=m;    //2
-            num=num/10; //0
+        int s = 0;
+        while(num > 0)
+        { 
+            s += (num % 10);  
+            num = num / 10; 
         }
-        sum=s;
-        if(sum>9)
+        sum = s;
+        if(sum >= 10)
         {
             addDigits(sum);
             
@@ -22,3 +21,32 @@ public:
         return sum;
     }
 };
+
+/*   EASY WAY
+
+class Solution {
+public:
+    int condense(int num)
+    {
+        int sm = 0;
+        while(num)
+        {
+            sm += (num % 10);
+            num = num / 10;
+        }
+        
+        return sm;
+    }
+    
+    int addDigits(int num) 
+    {
+        
+        while(num >= 10)
+        {
+            num = condense(num);
+        }
+    
+        return num;
+    }
+};
+*/
