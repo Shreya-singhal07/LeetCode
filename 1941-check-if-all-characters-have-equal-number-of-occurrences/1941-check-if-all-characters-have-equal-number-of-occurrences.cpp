@@ -2,15 +2,14 @@ class Solution {
 public:
     bool areOccurrencesEqual(string s) 
     {
-        int k=0;
+        
         unordered_map<char,int>m;
         for(int i = 0 ; i < s.length() ; i++)
         {
             m[s[i]]++;
         }
         
-        for(auto e : m)
-            k= e.second;
+       int k= m[s[0]];
         
         for(auto e : m)
         {
