@@ -2,18 +2,35 @@ class Solution {
 public:
     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) 
     {
-        for(int i=m ; i<m+n ; i++)
+        vector<int>a;
+        for(int i=0 ; i<m; i++)
         {
-            nums1.pop_back();
+                a.push_back(nums1[i]);
         }
-        for(int i=0 ; i<n; i++)
+        for(int i=0 ; i<n ; i++)
         {
-                nums1.push_back(nums2[i]);
+                a.push_back(nums2[i]);
         }
-        
-        sort(nums1.begin(),nums1.end());
+        sort(a.begin(),a.end());
+        nums1=a;
     }
 };
+// class Solution {
+// public:
+//     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) 
+//     {
+//         for(int i=m ; i<m+n ; i++)
+//         {
+//             nums1.pop_back();
+//         }
+//         for(int i=0 ; i<n; i++)
+//         {
+//                 nums1.push_back(nums2[i]);
+//         }
+        
+//         sort(nums1.begin(),nums1.end());
+//     }
+// };
 
 
 
