@@ -1,7 +1,5 @@
-class Solution 
-{
+class Solution {
 public:
-   
     int solve(vector<int>&dp, int n)
     {
         if(dp[n] == -1)
@@ -23,8 +21,8 @@ public:
         vector<int>dp(n+1,-1);
         return solve(dp,n);
     }
-};
 
+};
 // class Solution {
 // public:
     
